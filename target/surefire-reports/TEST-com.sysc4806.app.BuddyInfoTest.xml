@@ -7,18 +7,18 @@
     <property name="java.vm.version" value="25.92-b14"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/CraigBook/OneDrive/YEAR4/Winter2018/SYSC4806/java-web"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/CraigBook/OneDrive/YEAR4/Winter2018/SYSC4806"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7540"/>
+    <property name="idea.launcher.port" value="7537"/>
     <property name="user.country" value="CA"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/CraigBook/OneDrive/YEAR4/Winter2018/SYSC4806/java-web"/>
+    <property name="user.dir" value="/Users/CraigBook/OneDrive/YEAR4/Winter2018/SYSC4806"/>
     <property name="java.runtime.version" value="1.8.0_92-b14"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/endorsed"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.13.2"/>
+    <property name="os.version" value="10.13.3"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="user.home" value="/Users/CraigBook"/>
     <property name="user.timezone" value="America/Toronto"/>
@@ -65,7 +65,7 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="testGetName" classname="com.sysc4806.app.BuddyInfoTest" time="0"/>
-  <testcase name="testSetName" classname="com.sysc4806.app.BuddyInfoTest" time="0"/>
   <testcase name="testGetPhoneNo" classname="com.sysc4806.app.BuddyInfoTest" time="0"/>
+  <testcase name="testSetName" classname="com.sysc4806.app.BuddyInfoTest" time="0"/>
   <testcase name="testSetPhoneNo" classname="com.sysc4806.app.BuddyInfoTest" time="0"/>
 </testsuite>

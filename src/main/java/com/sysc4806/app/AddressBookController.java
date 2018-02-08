@@ -27,6 +27,4 @@ public class AddressBookController {
         model.addAttribute("newBuddy", bi.toString());
         return bi;
     }
-
-
 }

@@ -1,0 +1,132 @@
+sysc4806-practice.txt
+http://www.cram.com/flashcards/sysc-4806-questions-8568153
+
+What is the difference between siloed software and a SOA? List the pros and cons of each approach.  In siloed applications, software components can access each others' data directly. In a SOA, services must make use of the public API provided by a service to access its data. Services expose public APIs which may be accessed by multiple applications.
+
+Pros of SOA:
+- Allows for a high degree of reuse
+- Reduces cost of mis-interpreting customer needs
+- Explicit APIs ease testing
+
+
+Cons of SOA
+- performance cost due to network communication overhead
+- planning for dependability is difficult due to potential for partial system failures
+
+
+Pros of Silos
+- Easier to optimize performance because data can be shared directly between components
+- Easier to plan for failures
+
+
+Cons of Silos
+- Not easy to reuse components
+
+
+What is SaaS? What are 3 advantages of SaaS?
+SaaS: Software as a Service. SaaS is software that is delivered over the Internet using a thin client such as a web browser, as opposed to software distributed as an application binary.
+
+
+Advantages of SaaS:
+- Software is not tied to a particular OS version or hardware specs
+- Data is stored with the service rather than with the client, so the client doesn't need to worry about backing up their data
+- Changes to software can be tested with a small set of customers without disturbing all customers
+Name and explain two non-functional requirements for any SaaS application.  - Availability: Services must be available to customers whenever they are needed
+- Scalability: The service should be able to handle fluctuations in the demand for a service
+What are some advantages of using computer clusters instead of big mainframes?  - Clusters are more scalable
+- Cost of memory, processors, and storage for clusters is lower than equivalent resources for mainframes
+- Clusters are more reliable due to redundant hardware and software
+What mechanisms can the server of an HTTP application use to find out whether consecutive requests come from the same client? How does this mechanism work? A server side app can use cookies to store session information in a user's web browser which will be included in subsequent requests. In response to an HTTP request, the server responds with the "Set-Cookie" header, which includes the data to be stored by the client. In subsequent requests, the client includes this data in the "Cookie" header of the request.
+What are the tiers in a three-tier architecture and what are their roles? Presentation Tier: Contains an HTTP server that accepts requests and serves static content
+
+
+Logic Tier: Contains an application server that generates dynamic content in response to requests
+
+
+Persistence Tier: Stores data that must be preserved between requests
+Which tier of 3-tier apps is the most difficult to scale? The Persistence tier. Because HTTP is stateless, any request may be directed to any machine in the Presentation and Logic layers. Requests are not independent in the persistence layer, so the approach of simply adding more machines doesn't solve the problem.
+Name the tiers in the 3-tier architecture are involved in handling each of the following:
+a) models
+b) controllers
+c) views  a) Logic and Persistence
+b) Logic and Presentation
+c) Logic and Presentation
+What is the problem solved by Dependency Injection? The problem of decoupling a class from concrete dependencies. Dependency Injection allows an object to depend only on an interface, with no knowledge of how a concrete dependency is created, or which implementation provides the dependency.
+Explain why cloud computing might have had a lesser impact on SaaS if most SaaS apps didn't follow a shared-nothing architecture? Cloud computing allows easily adding and removing computers. The shared-nothing architecture is what makes it easy to add these new computers into a running app, and remove them when they aren't needed.
+What is the primary difference between a client and server in SaaS? A SaaS client is optimized to allow users to interact with infromation, whereas a SaaS server is optimized for serving many clients simultaneously.
+What is the Inversion of Control principle? What are some patterns that use this principle? Rather than an application controlling the control flow, the application gives control flow to a framework or library, providing callbacks that will be executed by the framework when appropriate.
+
+
+An example of the use of Inversion of Control is the Observer Pattern.
+How does constructor based dependency injection work? A class declares its dependencies as parameters to its constructor. When the class is instantiated, the dependencies are passed to the constructor.
+Give one pro and one con each of constructor based and setter based dependency injection. Constructor Based
+pro: guarantees that an object is completely initialized after creation
+con: constructors can easily become cluttered
+
+
+Setter Based
+pro: can be more readable than constructor based injection by indicating the purpose of the dependency in setter names
+cons: classes are forced to expose properties that should never be changed through setters
+Give one pro and one con each of the service locator pattern and dependency injection Service Locator
+pro: easy to understand the pattern
+con: a dependency on the service locator still exists in every class
+
+
+Dependency Injection
+pro: does not introduce any additional dependencies into the class
+con: more complex, difficult to understand than a service locator
+
+
+
+Compare configuration files and code-based configuration, describing the advantages and disadvantages of each.  Configuration Files
+Configuration files allow the configuration of software to be changed without changing the code.
+Config files can be less readable than code-based configuration
+
+
+Code Based
+Configuration files are an additional resource that must be managed in the project. Config files become a burden to manage, so code-based config is better if the config doesn't need to change per deployment.
+What is the difference between the Active Record and Data Mapper patterns?  The Active Record pattern provides a one-to-one mapping from classes to tables
+
+
+The Data Mapper pattern decouples object design from the database design, allowing each to evolve separately. The data mapper must be configured to map from the object model to the database design.
+Give one example of an impedence mismatch between the object-oriented and relational paradigms, and an ORM pattern used to solve it.  Inheritance is common in the object-oriented world; no equivalent concept exists in the relational world. An ORM pattern that solves this problem is the Single Table Inheritance pattern. In this pattern, instances of all subclasses are stored in a single table that stores all possible fields. A type column is used to differentiate. This pattern is an alternative to using a separate table for each subclass, which would increase the number of expensive joins required.
+Why is the has-many relationship in OO programing an impedence mismatch with relational models? What pattern is used to solve this problem? Describe it.  A has-many relationship corresponds to the relational concept of a multi-valued attribute, a violation of first normal form. The Association Table Mapping pattern is used to solve the problem. A table is created to represent the relationship between the objects. In this table, row exists for every value contained in the collection.
+Why is the concept of references in an object-oriented language an impedence mismatch with relational concepts? In OO, an object can be identified by a reference to it. In a relational database, rows are identified by a primary key. The impedence mismatch comes from trying to identify which rows are associated with an object. To solve this problem, an Indetity Field is used. The identity field is either an existing variable, or a special purpose new variable, which serves as a primary key in the database.
+What problem does the Front Controller pattern solved? What is an alternative pattern? When would you use one over the other? The Front Controller pattern eliminates the need to reconfigure the web server whenever the application needs to change. It also provides a way to implement behaviour that is common between pages. An alternative is the Page Controller pattern. The page controller could be used for simple applications.
+What are the benefits of continuous integration?  - reduced risk of making changes
+- a step towards continuous deployment
+- allows maintenance of a stable, working version of the latest product
+- reduced complexity to find bugs. By exposing bugs earlier, they are easier to fix.
+What are the steps involved in continuous integration?  1. Check out the latest version of the code
+2. Make changes on the local copy
+3. Add new tests and run old ones.
+4. Run an automated build
+5. Merge in new code from the master branch
+6. Run an automated build and tests
+7. Commit to mainline branch
+8. Run an automated build and integration tests
+9. If tests pass, deploy to desired environment.
+
+What items should not be checked into version control, and why? - Operating system
+- Database servers
+These are very large and complex to install
+
+
+- Build products: not necessary because everything needed to recreate them is in the repo
+
+What does a continuous integration server do? Runs integration tests when a new commit is detected on the mainline branch.
+Describe a way to automate SaaS deployment without disrupting end users.  SaaS can be deployed without disruption using redundancy and a load balancing server. All requests to the service go through a load balancing server, which determines which of the redundant servers should handle the request. In this way, a single web server can be updated with new code, while other servers remain available to serve customers. After updating servers one by one, the new version of the software is available to all users, with no downtime.
+What is the Broken Windows syndrome in the context of software bugs?  The Broken Windows syndrome is a psychological phenomenon in which programmers become discouraged and have less energy to fix bugs when there are a lot of bugs in the code.
+What changes on the server side when moving from a traditional server-centric SaaS app to a Single Page Application?  The server sends raw data to the client instead of responding with a full HTML view.
+What changes on the client side when moving from a traditional server-centric SaaS app to a Single Page Application?  The client uses AJAX to make requests for raw data and manipulates the DOM to display the new information.
+Describe two ways of dealing with JavaScript incompatibilities between web browsers.  - Use a library that abstracts away the incompatibilities, such as JQuery
+- Restrict Javascript to use a subset of the standard that is supported by all browsers
+Is it sufficient to perform user input validation on the client side? Why or why not? It is not sufficient to validate user input on the client side only. Any validation using JavaScript can be circumvented by a user, malicious users could use this to bypass validation completely.
+Describe a technique to organize JavaScript functions so that they don’t litter the global namespace. Define a single global object that contains the functions and objects needed by a library or application.
+What is the asset pipeline and what does it achieve?  The asset pipeline is a series of operations applied to Javascript artifacts. This can include transpiling to different versions of JavaScript, minification, and concatenation of multiple files into a single file. This reduces the number of requests needed to load a page, and decreases page load time by ensuring the JavaScript files are as small as possible.
+What are the steps required for AJAX programming? 1. Create a control to handle AJAX requests
+2. Build the URL on the client side for the request
+3. Send the request, passing a callback to the browser
+4. In the callback, update the DOM based on the response
+How can graceful degradation be achieved with AJAX? By creating AJAX-related elements in the page's setup function.
+What needs to be done in an AJAX call to ensure the response is in a JSON format? Include the header 'X-Requested-With: XMLHttpRequest'

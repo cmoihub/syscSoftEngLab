@@ -26,7 +26,7 @@ public class AddressBookController {
     }
 
 
-    @RequestMapping("/")
+    @RequestMapping("/message")
     public @ResponseBody String message(){
         return "Address Book";
     }

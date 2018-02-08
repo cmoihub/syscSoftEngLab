@@ -16,13 +16,37 @@ public class AddressBookController {
 //    public AddressBook addressBook(){
 //        return new AddressBook();
 //    }
-
     @Autowired
     BuddyInfoRepo buddyInfoRepo;
+
+    private final AddressBookService service;
+
+    public AddressBookController(AddressBookService service){
+        this.service = service;
+    }
+
+
+    @RequestMapping("/")
+    public @ResponseBody String message(){
+        return "Address Book";
+    }
+
+    @RequestMapping("/title")
+    public @ResponseBody String message_(){
+        return service.title();
+    }
 
     @RequestMapping("/newBuddy")
     public BuddyInfo newBuddy(@RequestParam("name") String name, @RequestParam("phoneNo") String phoneNo, Model model){
         BuddyInfo bi = new BuddyInfo(name, phoneNo);
+        buddyInfoRepo.save(bi);
+        model.addAttribute("newBuddy", bi.toString());
+        return bi;
+    }
+
+    @RequestMapping("/defaultBuddy")
+    public BuddyInfo newBuddy(Model model){
+        BuddyInfo bi = new BuddyInfo("craig", "6139155344");
         buddyInfoRepo.save(bi);
         model.addAttribute("newBuddy", bi.toString());
         return bi;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by CraigBook on 2018-02-01.
  */
 @Controller
-public class AddressBookController {
+public class BuddyController {
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
     @Autowired
@@ -23,12 +23,8 @@ public class AddressBookController {
 //    AddressBookRepo addressBookRepo;
 
     private AddressBook addressBook;
-    protected AddressBookController(){
+    protected BuddyController(){
         addressBook = new AddressBook();
-<<<<<<< HEAD:src/main/java/com/sysc4806/app/AddressBookController.java
-=======
-//        addressBookRepo.save(addressBook);
->>>>>>> 54bacdcff3dfd26a9992e59b17655079bbf8fa39:src/main/java/com/sysc4806/app/BuddyController.java
     }
 
     @RequestMapping("/title")
@@ -65,10 +61,7 @@ public class AddressBookController {
 
     @PostMapping("/addBuddyResults")
     public String allBuddies(@ModelAttribute (name = "buddy") BuddyInfo bi){
-<<<<<<< HEAD:src/main/java/com/sysc4806/app/AddressBookController.java
-        log.info(bi.toString());
-        return "addBuddyResults";
-=======
+
         buddyInfoRepo.save(bi);
         addressBook.addBuddy(bi);
         return "addBuddyResults";
@@ -82,6 +75,5 @@ public class AddressBookController {
             model.addAttribute("buddy" + i, buddyInfo);
         }
         return "addressBook";
->>>>>>> 54bacdcff3dfd26a9992e59b17655079bbf8fa39:src/main/java/com/sysc4806/app/BuddyController.java
     }
 }

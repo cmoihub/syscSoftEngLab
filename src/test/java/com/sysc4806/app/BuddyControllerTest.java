@@ -12,14 +12,14 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AddressBookControllerTest extends TestCase {
+public class BuddyControllerTest extends TestCase {
 
 
     @Autowired
-    private AddressBookController controller;
+    private BuddyController controller;
 
     public void setUp() throws Exception {
-        controller = new AddressBookController();
+        controller = new BuddyController();
     }
 
     @Test

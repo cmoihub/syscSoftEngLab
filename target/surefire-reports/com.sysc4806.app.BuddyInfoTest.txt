@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.sysc4806.app.BuddyInfoTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.sysc4806.app.BuddyInfoTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.sysc4806.app.BuddyInfoTest

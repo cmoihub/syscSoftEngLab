@@ -16,7 +16,7 @@ public class BuddyInfo {
     private String phoneNo;
 
     protected BuddyInfo(){
-        this("Craig", "6139155344");
+//        this("Craig", "6139155344");
     }
 
     public BuddyInfo(String name, String phoneNo){

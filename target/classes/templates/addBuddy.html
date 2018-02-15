@@ -5,7 +5,7 @@
     <!--<title>Add Buddies Here</title>-->
 <!--</head>-->
 <body>
-    <form action="#" th:action="@{/addBuddy}" th:object="${addBuddy}">
+    <form action="#" th:action="@{/addressBookPage}" th:object="${addBuddy}" method="post">
         <p>Name:<input type="text" th:field="*{name}"/></p>
         <p>PhoneNo:<input type="text" th:field="*{phoneNo}"/></p>
         <p>
@@ -14,8 +14,8 @@
         </p>
     </form>
 
-    <p th:text="'name:' + ${addBuddy.name}"></p>
-    <p th:text="'name:' + ${addBuddy.phoneNo}"></p>
+    <!--<p th:text="'name:' + ${addBuddy.name}"></p>-->
+    <!--<p th:text="'name:' + ${addBuddy.phoneNo}"></p>-->
     <!--<a href="/addBuddy">Add another Buddy</a>-->
 </body>
 </html>

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 /**
  * Created by CraigBook on 2018-02-01.
@@ -75,5 +77,10 @@ public class BuddyController {
             model.addAttribute("buddy" + i, buddyInfo);
         }
         return "addressBook";
+    }
+
+    @ModelAttribute("buddies")
+    public List<BuddyInfo> getBuddies() {
+        return addressBook.getBuddies();
     }
 }

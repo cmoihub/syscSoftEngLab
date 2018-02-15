@@ -5,7 +5,7 @@
     <!--<title>Add Buddies Here</title>-->
 <!--</head>-->
 <body>
-    <form action="#" th:action="@{/addressBookPage}" th:object="${addBuddy}" method="post">
+    <form action="#" th:action="@{/addBuddyResults}" th:object="${addBuddy}" method="post">
         <p>Name:<input type="text" th:field="*{name}"/></p>
         <p>PhoneNo:<input type="text" th:field="*{phoneNo}"/></p>
         <p>

@@ -18,8 +18,12 @@ public class AddressBookController {
     @Autowired
     BuddyInfoRepo buddyInfoRepo;
 
+    private AddressBook addressBook;
+    protected AddressBookController(){
+        addressBook = new AddressBook();
+    }
 
-    @RequestMapping("/")
+    @RequestMapping("/title")
     public @ResponseBody String message(){
         return "Address Book";
     }
@@ -51,10 +55,10 @@ public class AddressBookController {
         return "addBuddy";
     }
 
-    @PostMapping("/addressBookPage")
+    @PostMapping("/addBuddyResults")
     public String allBuddies(@ModelAttribute (name = "buddy") BuddyInfo bi){
         log.info(bi.toString());
 
-        return "addressBookPage";
+        return "addBuddyResults";
     }
 }

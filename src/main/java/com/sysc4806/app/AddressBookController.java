@@ -58,7 +58,6 @@ public class AddressBookController {
     @PostMapping("/addBuddyResults")
     public String allBuddies(@ModelAttribute (name = "buddy") BuddyInfo bi){
         log.info(bi.toString());
-
         return "addBuddyResults";
     }
 }

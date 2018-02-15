@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>AddressBook</title>-->
-<!--</head>-->
 <body>
-    <p th:text="'name:' + ${buddy.name}"></p>
-    <p th:text="'name:' + ${buddy.phoneNo}"></p>
-    <a href="/addBuddy">Add another Buddy</a>
+<p>Successfully created buddy with the following information</p>
+<p th:text="'name:' + ${buddy.name}"></p>
+<p th:text="'name:' + ${buddy.phoneNo}"></p>
+<a href="/addBuddy">Add another Buddy</a>
+<a href="/addressBook">Go to addressbook</a>
 </body>
 </html>
